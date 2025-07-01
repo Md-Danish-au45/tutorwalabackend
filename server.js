@@ -15,7 +15,7 @@ app.use(express.json());
 app.use("/api", contactRoutes);
 app.use("/api/consultation", consultationRoutes);
 
-const PORT = process.env.PORT || 5009;
+const PORT = 5006;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
