@@ -32,7 +32,7 @@ app.use("/api", contactRoutes);
 app.use("/api/student", studentRoutes);
 app.use("/api/consultation", consultationRoutes);
 
-const PORT = 5006;
+const PORT = process.env.PORT || 5006;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
