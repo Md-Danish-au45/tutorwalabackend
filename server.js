@@ -5,6 +5,7 @@ const cors = require("cors");
 const contactRoutes = require("./src/routes/contactRoutes");
 const consultationRoutes = require("./src/routes/consultationRoutes");
 const studentRoutes = require("./src/routes/studentRoutes");
+const articleRoutes = require("./src/routes/articles");
 const bodyParser = require("body-parser");
 const { default: mongoose } = require("mongoose");
 
@@ -27,10 +28,12 @@ mongoose
   )
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
+app.use("/uploads", express.static("uploads"));
 
 app.use("/api", contactRoutes);
 app.use("/api/student", studentRoutes);
 app.use("/api/consultation", consultationRoutes);
+app.use("/api/articles", articleRoutes);
 
 const PORT = process.env.PORT || 5006;
 app.listen(PORT, () => {
