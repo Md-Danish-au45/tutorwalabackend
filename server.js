@@ -26,7 +26,7 @@ app.use(express.json());
 // / MongoDB Connection
 mongoose
   .connect(
-    "mongodb+srv://danish:1234567890@cluster0.hde1hvc.mongodb.net/students",
+    "mongodb+srv://tutorswala:PcqWLTWTpJl0bb1A@cluster0.pjtra8t.mongodb.net/",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
