@@ -8,6 +8,12 @@ const studentRoutes = require("./src/routes/studentRoutes");
 const articleRoutes = require("./src/routes/articles");
 const bodyParser = require("body-parser");
 const { default: mongoose } = require("mongoose");
+const fs = require("fs");
+
+const uploadDir = "uploads";
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
 
 dotenv.config();
 
