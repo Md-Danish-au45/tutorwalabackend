@@ -8,6 +8,7 @@ const ArticleSchema = new mongoose.Schema({
   metaDescription: String,
   metaKeywords: [String],
   slug: { type: String, unique: true },
+  image: { type: String }, // ✅ ADD THIS LINE
   createdAt: { type: Date, default: Date.now },
 });
 
