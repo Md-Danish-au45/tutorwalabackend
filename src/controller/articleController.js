@@ -70,9 +70,9 @@ exports.createArticle = async (req, res) => {
       metaDescription,
       metaKeywords,
     } = req.body;
-    const slug = slugify(title, { lower: true, strict: true });
 
-    const imagePath = req.file ? req.file.path : null;
+    const slug = slugify(title, { lower: true, strict: true });
+    const imagePath = req.file?.path || null; // Cloudinary path
 
     const newArticle = new Article({
       title,
@@ -105,7 +105,8 @@ exports.updateArticle = async (req, res) => {
       metaDescription,
       metaKeywords,
     } = req.body;
-    const imagePath = req.file ? req.file.path : null;
+
+    const imagePath = req.file?.path || null;
 
     const updateFields = {
       title,
